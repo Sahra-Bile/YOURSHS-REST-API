@@ -21,11 +21,11 @@ class GarmentModel extends Database
 
 
 
-  public function addGarment(int $sellerId, string $name, string $type, string $description, float $price, bool $sold, string $sold_date)
+  public function addGarment(int $sellerId, string $name, string $type, string $description, int $price, string $sold_date)
   {
-    $query = "INSERT INTO $this->table (`sellerId`, `name`, `type`,  `description`, `price`, `sold`) VALUES (?,?,?,?,?,?,?)";
+    $query = "INSERT INTO $this->table (`sellerId`, `name`, `type`,  `description`, `price`, `sold_date`) VALUES (?,?,?,?,?,?)";
     $statement = $this->pdo->prepare($query);
-    $statement->execute([$sellerId, $name, $type, $description, $price, $sold, $sold_date]);
+    $statement->execute([$sellerId, $name, $type, $description, $price, $sold_date]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
   }
 }

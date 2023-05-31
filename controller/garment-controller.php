@@ -40,7 +40,7 @@ class GarmentController
 
     $data = json_decode($json, true);
 
-    if (isset($data['sellerId'], $data['name'], $data['type'], $data['description'], $data['price'], $data['sold'], $data['sold_date'])) {
+    if (isset($data['sellerId'], $data['name'], $data['type'], $data['description'], $data['price'], $data['sold_date'])) {
 
       $sellerId = filter_var($data['sellerId'], FILTER_SANITIZE_NUMBER_INT);
 
@@ -52,21 +52,14 @@ class GarmentController
 
       $description = filter_var($data['description'], FILTER_SANITIZE_SPECIAL_CHARS);
 
-      $price = filter_var($data['price'], FILTER_SANITIZE_NUMBER_FLOAT);
+      $price = filter_var($data['price'], FILTER_SANITIZE_NUMBER_INT);
 
-      $price = filter_var($price, FILTER_VALIDATE_FLOAT);
+      $price = filter_var($price, FILTER_VALIDATE_INT);
 
-      $sold = filter_var($data['sold'], FILTER_VALIDATE_BOOLEAN);
+
       $soldDate = filter_var($data['sold_date'], FILTER_SANITIZE_SPECIAL_CHARS);
 
-      $one = $this->model->addGarment($sellerId, $name, $type, $description, $price, $sold, $soldDate);
-
-      if (!isset($data['sold'])) {
-        $data['sold'] = false;
-      }
-
-      $sold = filter_var($data['sold'], FILTER_VALIDATE_BOOLEAN);
-      $one = $this->model->addGarment($sellerId, $name, $type, $description, $price, $sold, $soldDate);
+      $one = $this->model->addGarment($sellerId, $name, $type, $description, $price, $soldDate);
 
       $this->view->createNewGarment($one);
     } else {
