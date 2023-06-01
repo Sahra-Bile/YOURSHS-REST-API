@@ -22,7 +22,16 @@
        * For each endpoint, send the appropriate request and check the response  to ensure the endpoint is working correctly.
 
 
-     
+  
+# Credits
+    This project was created as a school project by my (Sahra Bile) in May-June 2023 and has been continuously updated on GitHub.
+
+
+
+
+
+
+   
     <img width="1135" alt="Skärmavbild" src="https://github.com/Sahra-Bile/YOURSHS-REST-API/assets/114146124/0e1d885f-087f-4ea4-96da-79b349790656">
 
    
@@ -57,17 +66,9 @@
 
 
 
-# Credits
-    This project was created as a school project by my (Sahra Bile) in May-June 2023 and has been continuously updated on GitHub.
-
-
-
-
-
-
-
 
     
+
 
 
 
