@@ -1,8 +1,13 @@
 # YOUR-S-H-S
-    Welcome to YOUR-S-H-S, a second hand store REST API project created with PHP and MySQL. This project includes various endpoints for managing garments and sellers, which can be tested using Postman.
+    Welcome to YOUR-S-H-S, a second hand store REST API project created with PHP and MySQL. 
+    This project includes various endpoints for managing garments and sellers, which can be tested using Postman.
 
 #  Installation
-    To use this project, clone this repository from GitHub and create a database named 'YOURSHS' by running the included SQL script on your workbench or phpMyAdmin page. You will also need to create a config.php file in the partials folder and enter your host, database name, user and password.
+    To use this project, 
+    clone this repository from GitHub and create a database named 'YOURSHS' by running 
+    the included SQL script on your workbench or phpMyAdmin page. 
+    You will also need to create a config.php
+    file in the partials folder and enter your host, database name, user and password.
 
 #  Testing Endpoints with Postman
     Postman is a popular tool for testing APIs. To test the endpoints in this project, follow these steps:
@@ -24,7 +29,8 @@
 
   
 # Credits
-    This project was created as a school project by my (Sahra Bile) in May-June 2023 and has been continuously updated on GitHub.
+    This project was created as a school project by my (Sahra Bile) 
+    in May-June 2023 and has been continuously updated on GitHub.
 
 
 
