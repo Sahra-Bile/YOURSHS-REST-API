@@ -49,10 +49,13 @@ if (strpos($url, 'garments-submitted/') === 0) {
 }
 if (strpos($url, 'garments/') === 0) {
   $id = substr($url, strlen('garments/'));
-  $garmentController->getGarment($id);
+  $garmentController->getGarmentById($id);
+}
+if ($requestMethod == "PUT") {
+  $garmentController->update($id);
+
 
 } else {
-
   switch ($url) {
     case 'garments':
       if ($requestMethod == "GET") {
@@ -60,7 +63,7 @@ if (strpos($url, 'garments/') === 0) {
       } elseif ($requestMethod == "POST") {
         $garmentController->add();
       } else {
-        echo "this is an invalid url garments.";
+        echo "Invalid Request Method for garments.";
       }
       break;
     case 'sellers':
@@ -69,11 +72,12 @@ if (strpos($url, 'garments/') === 0) {
       } elseif ($requestMethod == "POST") {
         $sellerController->createSeller();
       } else {
-        echo "this is an invalid url sellers.";
+        echo "Invalid Request Method for sellers.";
       }
       break;
     default:
       include_once __DIR__ . '/index.php';
       break;
   }
+
 }

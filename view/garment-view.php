@@ -34,6 +34,16 @@ class GarmentView
     ];
     header("Content-Type: application/json");
     echo json_encode($json);
+  }
+
+  public function outputUpdatedGarment(array $garment): void
+  {
+    $json = [
+      'result' => $garment,
+      'message' => "updated successfully!"
+    ];
+    header("Content-Type: application/json");
+    echo json_encode($json);
 
   }
 

@@ -21,7 +21,7 @@ class GarmentController
   }
 
 
-  public function getGarment($id)
+  public function getGarmentById($id)
   {
     $requestMethod = $_SERVER["REQUEST_METHOD"];
 
@@ -35,6 +35,38 @@ class GarmentController
   }
 
   public function add()
+  {
+    $json = file_get_contents("php://input");
+
+    $data = json_decode($json, true);
+
+    if (isset($data['sellerId'], $data['name'], $data['type'], $data['description'], $data['price'])) {
+
+      $sellerId = filter_var($data['sellerId'], FILTER_SANITIZE_NUMBER_INT);
+
+      $sellerId = filter_var($sellerId, FILTER_VALIDATE_INT);
+
+      $name = filter_var($data['name'], FILTER_SANITIZE_SPECIAL_CHARS);
+
+      $type = filter_var($data['type'], FILTER_SANITIZE_SPECIAL_CHARS);
+
+      $description = filter_var($data['description'], FILTER_SANITIZE_SPECIAL_CHARS);
+
+      $price = filter_var($data['price'], FILTER_SANITIZE_NUMBER_INT);
+
+      $price = filter_var($price, FILTER_VALIDATE_INT);
+
+      $one = $this->model->addGarment($sellerId, $name, $type, $description, $price);
+
+      $this->view->createNewGarment($one);
+    } else {
+      echo "OBS: could not add a new garment.";
+    }
+  }
+
+
+
+  public function update($id)
   {
     $json = file_get_contents("php://input");
 
@@ -59,13 +91,13 @@ class GarmentController
 
       $soldDate = filter_var($data['sold_date'], FILTER_SANITIZE_SPECIAL_CHARS);
 
-      $one = $this->model->addGarment($sellerId, $name, $type, $description, $price, $soldDate);
+      $one = $this->model->updateGarment($sellerId, $name, $type, $description, $price, $soldDate, $id);
 
-      $this->view->createNewGarment($one);
+      $this->view->outputUpdatedGarment($one);
+
+
     } else {
-      echo "OBS: could not add a new garment.";
+      echo "OBS: could not update.";
     }
-
-
   }
 }

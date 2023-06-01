@@ -30,7 +30,7 @@ class SellerView
   public function outputListSellerSubmissionsOfGarments(array $seller): void
   {
     $json = [
-      "message" => "get list of seller submissions of garments",
+      "message" => " list of seller submissions of garments",
       'seller-count' => count($seller),
       'result' => $seller
     ];
@@ -42,7 +42,7 @@ class SellerView
   public function outputTotalAmountFromSoldGarments(array $seller): void
   {
     $json = [
-      "message" => "get total revenue by seller from sold garments",
+      "message" => " total revenue by seller from sold garments",
       'seller-count' => count($seller),
       'result' => $seller
     ];

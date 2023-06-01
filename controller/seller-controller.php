@@ -37,9 +37,9 @@ class SellerController
 
     switch ($requestMethod) {
       case 'GET':
-        $one_1 = $this->model->getListOfSellerSubmissionsOfGarments($id);
+        $one = $this->model->getListOfSellerSubmissionsOfGarments($id);
 
-        $this->view->outputListSellerSubmissionsOfGarments($one_1);
+        $this->view->outputListSellerSubmissionsOfGarments($one);
         break;
 
     }
@@ -51,9 +51,9 @@ class SellerController
 
     switch ($requestMethod) {
       case 'GET':
-        $one_2 = $this->model->getTotalRevenueBySellerFromSoldGarments($id);
+        $one = $this->model->getTotalRevenueBySellerFromSoldGarments($id);
 
-        $this->view->outputTotalAmountFromSoldGarments($one_2);
+        $this->view->outputTotalAmountFromSoldGarments($one);
         break;
 
     }
@@ -65,8 +65,8 @@ class SellerController
 
     switch ($requestMethod) {
       case 'GET':
-        $one_3 = $this->model->numberOfSubmittedGarmentsFromTheSeller($id);
-        $this->view->outputNumberOfSubmittedGarments($one_3);
+        $one = $this->model->numberOfSubmittedGarmentsFromTheSeller($id);
+        $this->view->outputNumberOfSubmittedGarments($one);
         break;
 
     }
