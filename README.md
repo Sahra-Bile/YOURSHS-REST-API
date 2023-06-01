@@ -36,7 +36,6 @@
 
 <img width="1135" alt="Skärmavbild 2023-06-01 kl  13 36 38" src="https://github.com/Sahra-Bile/YOURSHS-REST-API/assets/114146124/7321bd0d-7ff2-4693-9154-313ceab23d12">
 
-<img width="1680" alt="Skärmavbild 2023-06-01 kl  11 52 54" src="https://github.com/Sahra-Bile/YOURSHS-REST-API/assets/114146124/8c3b71af-accf-4045-9746-9a5230b578fc">
 
 <img width="1100" alt="Skärmavbild 2023-06-01 kl  13 39 01" src="https://github.com/Sahra-Bile/YOURSHS-REST-API/assets/114146124/8ad521d7-69d9-4a70-a9aa-c23e158b7482">
 
