@@ -39,7 +39,7 @@ class SellerModel extends Database
   public function getListOfSellerSubmissionsOfGarments(int $sellerId)
   {
 
-    $sqlQuery = " SELECT s.id  AS 'seller_id',  g.name  'product_name' , g.type 'product_type', g.description 'product_description', g.price 'product_price', 
+    $sqlQuery = " SELECT g.name  'product_name' , g.type 'product_type', g.description 'product_description', g.price 'product_price', 
     g.sold_date 'product_sold_date' FROM $this->table  s  
     JOIN garments g ON  s.id = g.sellerId WHERE s.id = ?";
 
@@ -52,7 +52,7 @@ class SellerModel extends Database
 
   public function getTotalRevenueBySellerFromSoldGarments(int $sellerId)
   {
-    $sql_query = "SELECT s.first_name , s.last_name, s.email, s.phone ,  
+    $sql_query = "SELECT s.first_name , s.last_name,  
     COUNT(g.sold_date)  AS ' number of  sold garments',  
     SUM(g.price)  'total sales amount' FROM $this->table  s
     JOIN garments g  ON g.sellerId = s.id
@@ -67,7 +67,7 @@ class SellerModel extends Database
   public function numberOfSubmittedGarmentsFromTheSeller(int $sellerId)
   {
 
-    $sql_query = " SELECT s.first_name , s.last_name, s.email, s.phone , 
+    $sql_query = " SELECT s.first_name , s.last_name , 
     COUNT(s.id)  AS `number of submitted  garments` FROM $this->table  s
       JOIN garments  g ON g.sellerId = s.id
     WHERE s.id = ? ORDER BY s.id";
